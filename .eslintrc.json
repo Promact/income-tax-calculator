@@ -1,5 +1,5 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
@@ -10,7 +10,9 @@
         "es6": true
     },
     "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",        
+        "no-unused-vars": "warn",
+        "no-console": "warn"
     },
     "settings": {
         "react": {
