@@ -51,16 +51,7 @@ jobs:
           name: github-pages
           path: ${{ runner.temp }}/artifact.tar
           retention-days: 1
-          if-no-files-found: error
-
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if-no-files-found: error      
 
   # Deploy job
   deploy:
